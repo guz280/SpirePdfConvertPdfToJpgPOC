@@ -23,7 +23,7 @@ namespace SpirePdfConvertPdfToJpgPOC
 
 
 			byte[] fileData = File.ReadAllBytes(filePath);
-				Console.WriteLine(String.Join(',', fileData));
+				//Console.WriteLine(String.Join(',', fileData));
 
 				string fileName = "good"; // "Watt&Wolt_Nov";
 
