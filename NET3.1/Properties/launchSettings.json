@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "NET3.1": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
