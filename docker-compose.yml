@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  net3.1:
+    image: ${DOCKER_REGISTRY-}net31
+    build:
+      context: .
+      dockerfile: NET3.1/Dockerfile
