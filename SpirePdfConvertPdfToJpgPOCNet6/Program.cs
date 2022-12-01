@@ -17,11 +17,13 @@ namespace SpirePdfConvertPdfToJpgPOCNet6
 				// Load document from local
 				//string filePath = "./PdfToConvert/sampletwo.pdf";
 				//string filePath = "./PdfToConvert/good.pdf";
-				string filePath = "./PdfToConvert/Watt&Wolt_Nov.pdf"; 
+				//string filePath = "./PdfToConvert/Watt&Wolt_Nov.pdf";
+				string filePath = "./PdfToConvert/UserManual.pdf";
 
 				//string fileName = "sampletwo";
 				//string fileName = "good";
-				string fileName = "Watt&Wolt_Nov";
+				//string fileName = "Watt&Wolt_Nov";
+				string fileName = "UserManual";
 
 				//var path = "C:\\00_Development\\GitHub\\SpirePdfConvertPdfToJpgPOC\\NET3.1\\ImagesGenerated\\";
 				//var path = "C:\\development\\POC\\SpirePdfConvertPdfToJpgPOC\\SpirePdfConvertPdfToJpgPOC\\ImagesGenerated\\";
@@ -41,7 +43,7 @@ namespace SpirePdfConvertPdfToJpgPOCNet6
 
 				for (int page = 0; page < pages; page++)
 				{
-					fileName = $"{fileName}_page_{page + 1}.jpg";
+					string internalFileName = $"{fileName}_page_{page + 1}.jpg";
 
 					using (Stream bmp = document.SaveAsImage(page))
 					{
@@ -49,7 +51,7 @@ namespace SpirePdfConvertPdfToJpgPOCNet6
 						bmp.Read(bt, 0, bt.Length);
 						bmp.Flush();
 						bmp.Close();
-						File.WriteAllBytes(fileName, bt);
+						File.WriteAllBytes(internalFileName, bt);
 					}
 
 				}
