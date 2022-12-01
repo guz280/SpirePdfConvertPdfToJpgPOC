@@ -9,7 +9,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1" />
-    <PackageReference Include="Spire.PDF" Version="8.11.10" />
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="1.68.1" />
+    <PackageReference Include="Spire.Officefor.NETStandard" Version="7.11.0" />
   </ItemGroup>
 
   <ItemGroup>

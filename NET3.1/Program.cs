@@ -1,6 +1,5 @@
 ﻿using Spire.Pdf;
 using System;
-using System.Drawing;
 using System.IO;
 
 namespace NET3._1
@@ -15,13 +14,13 @@ namespace NET3._1
 				Spire.License.LicenseProvider.SetLicenseKey(spirePdfLicence);
 
 				// Load document from local
-				//string filePath = "./PdfToConvert/sampletwo.pdf";
+				string filePath = "./PdfToConvert/sampletwo.pdf";
 				//string filePath = "./PdfToConvert/good.pdf";
-				string filePath = "./PdfToConvert/Watt&Wolt_Nov.pdf"; 
+				//string filePath = "./PdfToConvert/Watt&Wolt_Nov.pdf"; 
 
-				//string fileName = "sampletwo";
+				string fileName = "sampletwo";
 				//string fileName = "good";
-				string fileName = "Watt&Wolt_Nov";
+				//string fileName = "Watt&Wolt_Nov";
 
 				//var path = "C:\\00_Development\\GitHub\\SpirePdfConvertPdfToJpgPOC\\NET3.1\\ImagesGenerated\\";
 				//var path = "C:\\development\\POC\\SpirePdfConvertPdfToJpgPOC\\SpirePdfConvertPdfToJpgPOC\\ImagesGenerated\\";
@@ -41,15 +40,21 @@ namespace NET3._1
 
 				for (int page = 0; page < pages; page++)
 				{
-					Image image = document.SaveAsImage(page);
 					fileName = $"{fileName}_page_{page + 1}.jpg";
 
-					Console.WriteLine(fileName);
-
-					byte[] imageByteArray = ImageToByteArray(image);
-
-
-					System.IO.File.WriteAllBytes(fileName, imageByteArray);
+					using (Stream bmp = document.SaveAsImage(page))
+                    {
+                        byte[] bt = new byte[bmp.Length];
+						bmp.Read(bt, 0, bt.Length);
+						bmp.Flush();
+						bmp.Close();
+						File.WriteAllBytes(fileName, bt);
+                    }
+					
+					//var image = document.SaveAsImage(page);
+					//Console.WriteLine(fileName);
+					//byte[] imageByteArray = ImageToByteArray(image);
+					//System.IO.File.WriteAllBytes(fileName, imageByteArray);
 				}
 
 				Console.WriteLine("Loop Exited");
@@ -67,11 +72,11 @@ namespace NET3._1
             }
 		}
 
-		public static byte[] ImageToByteArray(Image img)
-		{
-			MemoryStream ms = new MemoryStream();
-			img.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
-			return ms.ToArray();
-		}
+		//public static byte[] ImageToByteArray(Image img)
+		//{
+		//	MemoryStream ms = new MemoryStream();
+		//	img.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+		//	return ms.ToArray();
+		//}
 	}
 }

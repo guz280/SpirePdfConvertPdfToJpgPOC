@@ -3,22 +3,22 @@
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS base
 WORKDIR /app
 # install System.Drawing native dependencies
-#RUN apt-get update \
-    #&& apt-get install -y --allow-unauthenticated \
-        #libc6-dev \
-        #libgdiplus \
-        #libx11-dev \
-    #&& rm -rf /var/lib/apt/lists/*
+RUN apt-get update \
+    && apt-get install -y --allow-unauthenticated \
+        libc6-dev \
+        libgdiplus \
+        libx11-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build 
 WORKDIR /src
 # install System.Drawing native dependencies
-#RUN apt-get update \
-    #&& apt-get install -y --allow-unauthenticated \
-        #libc6-dev \
-        #libgdiplus \
-        #libx11-dev \
-    #&& rm -rf /var/lib/apt/lists/*
+RUN apt-get update \
+    && apt-get install -y --allow-unauthenticated \
+        libc6-dev \
+        libgdiplus \
+        libx11-dev \
+    && rm -rf /var/lib/apt/lists/*
 COPY ["NET3.1/NET3.1.csproj", "NET3.1/"]
 RUN dotnet restore "NET3.1/NET3.1.csproj"
 COPY . .
