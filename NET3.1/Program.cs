@@ -51,7 +51,7 @@ namespace NET3._1
 						File.WriteAllBytes(fileName, bt);
                     }
 					
-					//var image = document.SaveAsImage(page);
+					//Image image = document.SaveAsImage(page);
 					//Console.WriteLine(fileName);
 					//byte[] imageByteArray = ImageToByteArray(image);
 					//System.IO.File.WriteAllBytes(fileName, imageByteArray);
