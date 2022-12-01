@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/SpirePdfConvertPdfToJpgPOCNet6/sampletwo_page_1.jpg
+/SpirePdfConvertPdfToJpgPOCNet6/sampletwo_page_1.jpg_page_2.jpg
