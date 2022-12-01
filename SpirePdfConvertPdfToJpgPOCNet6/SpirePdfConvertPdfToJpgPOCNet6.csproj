@@ -15,6 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="PdfToConvert\UserManual.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="PdfToConvert\good.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
