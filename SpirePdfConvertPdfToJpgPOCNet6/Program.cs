@@ -15,28 +15,48 @@ namespace SpirePdfConvertPdfToJpgPOCNet6
 				Spire.License.LicenseProvider.SetLicenseKey(spirePdfLicence);
 
 				// Load document from local
-				string filePath = "./PdfToConvert/good.pdf";
-				//string filePath = "./PdfToConvert/Watt&Wolt_Nov.pdf";
+				//string filePath = "./PdfToConvert/sampletwo.pdf";
+				//string filePath = "./PdfToConvert/good.pdf";
+				string filePath = "./PdfToConvert/Watt&Wolt_Nov.pdf"; 
 
+				//string fileName = "sampletwo";
+				//string fileName = "good";
+				string fileName = "Watt&Wolt_Nov";
+
+				//var path = "C:\\00_Development\\GitHub\\SpirePdfConvertPdfToJpgPOC\\NET3.1\\ImagesGenerated\\";
+				//var path = "C:\\development\\POC\\SpirePdfConvertPdfToJpgPOC\\SpirePdfConvertPdfToJpgPOC\\ImagesGenerated\\";
 
 				byte[] fileData = File.ReadAllBytes(filePath);
 				//Console.WriteLine(String.Join(',', fileData));
 
-				string fileName = "good"; // "Watt&Wolt_Nov";
-
 				PdfDocument document = new PdfDocument();
+
 				document.LoadFromBytes(fileData);
-				Console.WriteLine(document.ToString());
+				//Console.WriteLine(document.ToString());
+
 				var pages = document.Pages.Count;
+
+				var path = Directory.GetCurrentDirectory();
+				Console.WriteLine(path);
+
 				for (int page = 0; page < pages; page++)
 				{
-					Image image = document.SaveAsImage(page);// (page, PdfImageType.Bitmap);
 					fileName = $"{fileName}_page_{page + 1}.jpg";
 
-					byte[] imageByteArray = ImageToByteArray(image);
+					using (Stream bmp = document.SaveAsImage(page))
+					{
+						byte[] bt = new byte[bmp.Length];
+						bmp.Read(bt, 0, bt.Length);
+						bmp.Flush();
+						bmp.Close();
+						File.WriteAllBytes(fileName, bt);
+					}
 
-					System.IO.File.WriteAllBytes("C:\\development\\POC\\SpirePdfConvertPdfToJpgPOC\\SpirePdfConvertPdfToJpgPOCNet6\\ImagesGenerated\\" + fileName, imageByteArray);
 				}
+
+				Console.WriteLine("Loop Exited");
+
+				document.Close();
 			}
 			catch (System.Exception ex)
 			{
@@ -45,11 +65,11 @@ namespace SpirePdfConvertPdfToJpgPOCNet6
 		}
 
 
-		public static byte[] ImageToByteArray(Image img)
-		{
-			MemoryStream ms = new MemoryStream();
-			img.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
-			return ms.ToArray();
-		}
+		//public static byte[] ImageToByteArray(Image img)
+		//{
+		//	MemoryStream ms = new MemoryStream();
+		//	img.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+		//	return ms.ToArray();
+		//}
 	}
 }
