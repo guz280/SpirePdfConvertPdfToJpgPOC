@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpirePdfConvertPdfToJpgPOCN
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NET3.1", "NET3.1\NET3.1.csproj", "{FFFCD495-5A6F-4AD4-AF56-B45DCA0588FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpirePdfConvertPdfToJpgPOCNet3_1", "SpirePdfConvertPdfToJpgPOCNet3_1\SpirePdfConvertPdfToJpgPOCNet3_1.csproj", "{9534EF1F-6D79-43C2-9330-4559E276C06F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FFFCD495-5A6F-4AD4-AF56-B45DCA0588FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFFCD495-5A6F-4AD4-AF56-B45DCA0588FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFFCD495-5A6F-4AD4-AF56-B45DCA0588FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9534EF1F-6D79-43C2-9330-4559E276C06F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9534EF1F-6D79-43C2-9330-4559E276C06F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9534EF1F-6D79-43C2-9330-4559E276C06F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9534EF1F-6D79-43C2-9330-4559E276C06F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

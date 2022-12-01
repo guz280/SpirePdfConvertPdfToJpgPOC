@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SpirePdfConvertPdfToJpgPOCNet3_1": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

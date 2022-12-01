@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Spire.Pdf;
+using System;
 using System.IO;
-using Spire.Pdf;
 
-namespace SpirePdfConvertPdfToJpgPOC
+namespace SpirePdfConvertPdfToJpgPOCNet3_1
 {
 	internal class Program
 	{
@@ -50,11 +50,6 @@ namespace SpirePdfConvertPdfToJpgPOC
 						bmp.Close();
 						File.WriteAllBytes(fileName, bt);
 					}
-
-					//Image image = document.SaveAsImage(page);
-					//fileName = $"{fileName}_page_{page + 1}.jpg";
-					//byte[] imageByteArray = ImageToByteArray(image);
-					//System.IO.File.WriteAllBytes(path + fileName, imageByteArray);
 				}
 
 				Console.WriteLine("Loop Exited");
@@ -65,14 +60,11 @@ namespace SpirePdfConvertPdfToJpgPOC
 			{
 				Console.WriteLine("Error converting to image files in PdfToImagesConversion: " + ex);
 			}
+
+			while (true)
+			{
+
+			}
 		}
-
-		//public static byte[] ImageToByteArray(Image img)
-		//{
-		//	MemoryStream ms = new MemoryStream();
-		//	img.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
-		//	return ms.ToArray();
-		//}
-
 	}
 }
