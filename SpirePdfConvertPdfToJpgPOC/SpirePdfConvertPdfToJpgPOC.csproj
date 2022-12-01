@@ -16,6 +16,9 @@
     <None Update="PdfToConvert\good.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="PdfToConvert\sampletwo.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="PdfToConvert\Watt&amp;Wolt_Nov.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
