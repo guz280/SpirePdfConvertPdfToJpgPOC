@@ -16,13 +16,13 @@ namespace SpirePdfConvertPdfToJpgPOC
                 // Load document from local
                 //string filePath = "./PdfToConvert/sampletwo.pdf";
                 //string filePath = "./PdfToConvert/good.pdf";
-                //string filePath = "./PdfToConvert/Watt&Wolt_Nov.pdf"; 
-                string filePath = "./PdfToConvert/UserManual.pdf"; 
+                string filePath = "./PdfToConvert/Watt&Wolt_Nov.pdf"; 
+                //string filePath = "./PdfToConvert/UserManual.pdf"; 
 
                 //string fileName = "sampletwo";
                 //string fileName = "good";
-                //string fileName = "Watt&Wolt_Nov";
-                string fileName = "UserManual";
+                string fileName = "Watt&Wolt_Nov";
+                //string fileName = "UserManual";
 
                 //var path = "C:\\00_Development\\GitHub\\SpirePdfConvertPdfToJpgPOC\\NET3.1\\ImagesGenerated\\";
                 //var path = "C:\\development\\POC\\SpirePdfConvertPdfToJpgPOC\\SpirePdfConvertPdfToJpgPOC\\ImagesGenerated\\";
@@ -68,6 +68,12 @@ namespace SpirePdfConvertPdfToJpgPOC
 			{
 				Console.WriteLine("Error converting to image files in PdfToImagesConversion: " + ex);
 			}
+
+			// While loop used so that the container doesn't shut down
+            while (true)
+            {
+
+            }
 		}
 
 		//public static byte[] ImageToByteArray(Image img)

@@ -64,6 +64,12 @@ namespace SpirePdfConvertPdfToJpgPOCNet6
 			{
 				Console.WriteLine("Error converting to image files in PdfToImagesConversion: " + ex);
 			}
+
+			// While loop used so that the container doesn't shut down
+			while (true)
+			{
+
+			}
 		}
 
 
